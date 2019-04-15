@@ -16,6 +16,7 @@ import { withStyles } from '@material-ui/core/styles';
 import rubyLogo from './ruby_logo.svg';
 import logo from './logo.svg';
 import './App.css';
+import Resume from './Resume.jsx'
 
 const styles = theme => ({
   '@global': {
@@ -170,7 +171,7 @@ function Pricing(props) {
           </Typography>
         </div>
         {/* End hero unit */}
-        <Grid container spacing={40} alignItems="flex-head">
+        <Grid container spacing={40} alignItems="flex-start">
           {tiers.map(tier => (
             // Enterprise card is full width at sm breakpoint
             <Grid item key={tier.title} xs={12} sm={3} md={3}>
@@ -218,14 +219,16 @@ function Pricing(props) {
               </Typography>
               {footer.description.map(item => (
                 <Typography key={item.title} variant="subtitle1" color="textSecondary">
-                <a
-                className="App-link"
-                href={item.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                >
-                  {item.title}
-                </a>
+                {footer.title == '経歴'
+                  ? <Resume
+                      title={item.title} />
+                  :<a className="App-link"
+                      href={item.link}
+                      target="_blank"
+                      rel="noopener noreferrer">
+                      {item.title}
+                    </a>
+                  }
                 </Typography>
               ))}
             </Grid>
