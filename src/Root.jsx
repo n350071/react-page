@@ -12,8 +12,10 @@ class Root extends Component {
     return(
       <BrowserRouter basename={process.env.PUBLIC_URL}>
         <div>
-          <Route exact path="/" component={App} />
-          <Route exact path="/resume" component={Resume} />
+          {/*<Route exact path="/" component={App} />*/}
+          {/*}<Route exact path="/resume" component={Resume} />*/}
+          <Route exact path="/" render={props => <App route='home' {...props} />} />
+          <Route exact path="/resume" render={props => <App route='resume' {...props} />} />
         </div>
       </BrowserRouter>
     )

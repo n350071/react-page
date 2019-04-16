@@ -1,35 +1,21 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardHeader from '@material-ui/core/CardHeader';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
-import StarIcon from '@material-ui/icons/StarBorder';
-import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
-import rubyLogo from './ruby_logo.svg';
-import logo from './logo.svg';
 import './App.css';
-import Resume from './Resume.jsx'
-import { BrowserRouter, Route, Link } from 'react-router-dom';
 
 const styles = theme => ({
   '@global': {
     body: {
       backgroundColor: theme.palette.common.white,
     },
-  },
-  appBar: {
-    position: 'relative',
-  },
-  toolbarTitle: {
-    // flex: 1,
   },
   layout: {
     width: 'auto',
@@ -60,20 +46,15 @@ const styles = theme => ({
       paddingBottom: theme.spacing.unit * 2,
     },
   },
-  footer: {
-    marginTop: theme.spacing.unit * 8,
-    borderTop: `1px solid ${theme.palette.divider}`,
-    padding: `${theme.spacing.unit * 6}px 0`,
-  },
 });
 
 const tiers = [
   {
-    title: 'FrontEnd',
+    title: 'フロント',
     description: ['ReactJS', 'JQuery', 'JQueryMobile', 'Android(Java)', 'Cordova', 'iOS(Objective-C)'],
   },
   {
-    title: 'BackEnd',
+    title: 'バック',
     subheader: 'Most popular',
     description: [
       'Ruby on Rails',
@@ -83,7 +64,7 @@ const tiers = [
     ],
   },
   {
-    title: 'Infra/Ops',
+    title: 'インフラ',
     description: [
       '(kubernetes)',
       'Docker',
@@ -94,7 +75,7 @@ const tiers = [
     ],
   },
   {
-    title: 'Others',
+    title: 'その他',
     description: [
       'PM(Agile)',
       'PL(Waterfall)',
@@ -103,65 +84,20 @@ const tiers = [
     ],
   },
 ];
-const footers = [
-  {
-    title: '経歴',
-    description: [{
-      title: '履歴書',
-      link: './resume'
-    }, {
-      title: '職務経歴書',
-      link: './'
-    }],
-  },
-  {
-    title: '連絡先',
-    description: [{
-      title: 'Twitter',
-      link: 'https://twitter.com/shirofune9876'
-    }, {
-      title: 'Facebook',
-      link: 'https://www.facebook.com/naoki0515ishigaki'
-    }],
-  },
-  {
-    title: 'その他',
-    description: [{
-      title: 'GitHub',
-      link: 'https://github.com/nao0515ki'
-    }, {
-      title: 'Qiita',
-      link: 'https://qiita.com/nao_0515_ki'}
-    ],
-  },
-];
 
-function Pricing(props) {
+function Home(props) {
   const { classes } = props;
 
   return (
     <React.Fragment>
-      <CssBaseline />
-      <AppBar position="static" color="default" className={classes.appBar}>
-        <Toolbar>
-          <img src={logo} className="App-logo" alt="logo" />
-          <img src={rubyLogo} className="Ruby-logo" alt="logo" />
-          <Typography variant="h6" color="inherit" noWrap className={classes.toolbarTitle}>
-            石垣尚紀
-          </Typography>
-          {/*<Button>Features</Button>*/}
-          {/*<Button>Enterprise</Button>*/}
-          {/*<Button>Support</Button>*/}
-          {/*<Button color="primary" variant="outlined">*/}
-          {/*  Login*/}
-          {/*</Button>*/}
-        </Toolbar>
-      </AppBar>
       <main className={classes.layout}>
         {/* Hero unit */}
         <div className={classes.heroContent}>
           <Typography component="h3" variant="h3" align="left" color="textPrimary" gutterBottom>
             Web Developer
+          </Typography>
+          <Typography component="h4" variant="h4" align="left" color="textPrimary" gutterBottom>
+            所属 : フリーランス
           </Typography>
           <Typography component="h4" variant="h4" align="left" color="textPrimary" gutterBottom>
             石垣尚紀
@@ -172,6 +108,11 @@ function Pricing(props) {
           </Typography>
         </div>
         {/* End hero unit */}
+
+        <Typography component="h4" variant="h4" align="left" color="textPrimary" gutterBottom>
+        スキル
+        </Typography>
+
         <Grid container spacing={40} alignItems="flex-start">
           {tiers.map(tier => (
             // Enterprise card is full width at sm breakpoint
@@ -182,7 +123,6 @@ function Pricing(props) {
                   // subheader={tier.subheader}
                   titleTypographyProps={{ align: 'center' }}
                   subheaderTypographyProps={{ align: 'center' }}
-                  // action={tier.title === 'Pro' ? <StarIcon /> : null}
                   className={classes.cardHeader}
                 />
                 <CardContent>
@@ -210,46 +150,12 @@ function Pricing(props) {
           ))}
         </Grid>
       </main>
-      {/* Footer */}
-      <footer className={classNames(classes.footer, classes.layout)}>
-        <Grid container spacing={32} justify="space-evenly">
-          {footers.map(footer => (
-            <Grid item xs key={footer.title}>
-              <Typography variant="h6" color="textPrimary" gutterBottom>
-                {footer.title}
-              </Typography>
-              {footer.description.map(item => (
-                <Typography key={item.title} variant="subtitle1" color="textSecondary">
-                {footer.title == '経歴'
-                  ? <Link to="/resume">履歴書</Link>
-                    // <a className="App-link"
-                    //     href={item.link}
-                    //     target="_self"
-                    //     rel="noopener noreferrer">
-                    //     {item.title}
-                    //   </a>
-                   // <Resume
-                      // title={item.title} />
-                  :<a className="App-link"
-                      href={item.link}
-                      target="_blank"
-                      rel="noopener noreferrer">
-                      {item.title}
-                    </a>
-                  }
-                </Typography>
-              ))}
-            </Grid>
-          ))}
-        </Grid>
-      </footer>
-      {/* End footer */}
     </React.Fragment>
   );
 }
 
-Pricing.propTypes = {
+Home.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(Pricing);
+export default withStyles(styles)(Home);

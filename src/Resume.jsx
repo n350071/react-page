@@ -112,23 +112,30 @@ class Resume extends React.Component {
     return (
       <Grid container spacing={24}>
         <Grid item xs={12}>
-          <Typography variant="h6">基本情報</Typography>
+          <Typography variant="h6" align='left'>基本情報</Typography>
         </Grid>
         <Grid item xs={12}>
-          <Table className={classes.table} padding='none'>
-            <TableHead>
-              <TableRow>
-                <TableCell className={classes.tableFont} >名前</TableCell>
-                <TableCell className={classes.tableFont}  align="left">年齢</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-                <TableRow key={1}>
-                  <TableCell className={classes.tableFont}  component="th" scope="row">石垣尚紀</TableCell>
-                  <TableCell className={classes.tableFont}  align="left">33歳(5月生まれ)</TableCell>
-                </TableRow>
-            </TableBody>
-          </Table>
+          <ExpansionPanel>
+            <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+              <Typography className={classes.heading}>基本情報</Typography>
+            </ExpansionPanelSummary>
+            <ExpansionPanelDetails>
+              <Table className={classes.table} padding='none'>
+                <TableHead>
+                  <TableRow>
+                    <TableCell className={classes.tableFont} >名前</TableCell>
+                    <TableCell className={classes.tableFont}  align="left">年齢</TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                    <TableRow key={1}>
+                      <TableCell className={classes.tableFont}  component="th" scope="row">石垣尚紀</TableCell>
+                      <TableCell className={classes.tableFont}  align="left">33歳(5月生まれ)</TableCell>
+                    </TableRow>
+                </TableBody>
+              </Table>
+            </ExpansionPanelDetails>
+          </ExpansionPanel>
         </Grid>
         <Grid item xs={12}>
           <Typography variant="h6">学歴</Typography>
