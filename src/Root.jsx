@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+// import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App.jsx';
-import Resume from './Resume.jsx';
-import * as serviceWorker from './serviceWorker';
-import { BrowserRouter, Route, Link } from 'react-router-dom';
+// import Resume from './Resume.jsx';
+// import * as serviceWorker from './serviceWorker';
+import { BrowserRouter, Route } from 'react-router-dom';
 
 
 class Root extends Component {

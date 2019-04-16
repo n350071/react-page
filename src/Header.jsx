@@ -1,13 +1,13 @@
 import React from 'react';
-import classNames from 'classnames';
+// import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
-import Button from '@material-ui/core/Button';
+// import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
-import rubyLogo from './ruby_logo.svg';
+// import rubyLogo from './ruby_logo.svg';
 import logo from './logo.svg';
 import './App.css';
 import { Link } from 'react-router-dom';
@@ -30,9 +30,9 @@ function Header(props) {
             {/*<img src={rubyLogo} className="Ruby-logo" alt="logo" />*/}
           </Link>
           <Typography variant="h6" color="inherit" className={classes.toolbarTitle}>
-            { route == 'home'
+            { route === 'home'
               ? 'ホーム'
-              : route == 'resume'
+              : route === 'resume'
                 ? '履歴'
                 : '職務経歴' }
           </Typography>

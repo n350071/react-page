@@ -5,7 +5,6 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 import './App.css';
-import Resume from './Resume.jsx'
 import { Link } from 'react-router-dom';
 
 const styles = theme => ({
@@ -64,7 +63,7 @@ function Home(props) {
               </Typography>
               {footer.description.map(item => (
                 <Typography key={item.title} variant="subtitle1" color="textSecondary">
-                {footer.title == '経歴'
+                {footer.title === '経歴'
                   ? <Link to={item.link}>{item.title}</Link>
                     // <a className="App-link"
                     //     href={item.link}
