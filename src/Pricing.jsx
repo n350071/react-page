@@ -219,9 +219,15 @@ function Pricing(props) {
               </Typography>
               {footer.description.map(item => (
                 <Typography key={item.title} variant="subtitle1" color="textSecondary">
-                {footer.title == '経歴a'
-                  ? <Resume
-                      title={item.title} />
+                {footer.title == '経歴'
+                  ? <a className="App-link"
+                      href={item.link}
+                      target="_self"
+                      rel="noopener noreferrer">
+                      {item.title}
+                    </a>
+                   // <Resume
+                      // title={item.title} />
                   :<a className="App-link"
                       href={item.link}
                       target="_blank"
