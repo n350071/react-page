@@ -1,11 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+import Dialog from '@material-ui/core/Dialog';
+import Divider from '@material-ui/core/Divider';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
+import CloseIcon from '@material-ui/icons/Close';
 import Slide from '@material-ui/core/Slide';
 import './App.css';
 import {ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails} from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import Collapse from '@material-ui/core/Collapse';
+import ExpandLess from '@material-ui/icons/ExpandLess';
+import ExpandMore from '@material-ui/icons/ExpandMore';
 
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -32,14 +47,14 @@ const styles = theme => ({
   },
   tableFont: {
     fontSize: '12px'
-  },
-  expansionPanelDetails: {
-    padding: '0px'
   }
-
 });
 
-class Resume extends React.Component {
+function Transition(props) {
+  return <Slide direction="up" {...props} />;
+}
+
+class JobCareer extends React.Component {
   state = {
     open: false,
     expanded: null,
@@ -64,6 +79,17 @@ class Resume extends React.Component {
     const { expanded } = this.state;
 
     let id = 0;
+    function createData(name, calories, fat, carbs, protein) {
+      id += 1;
+      return { id, name, calories, fat, carbs, protein };
+    }
+    const rows = [
+      createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+      createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+      createData('Eclair', 262, 16.0, 24, 6.0),
+      createData('Cupcake', 305, 3.7, 67, 4.3),
+      createData('Gingerbread', 356, 16.0, 49, 3.9),
+    ];
     function createResume(date, name, course, situation){
       id +=1;
       return { id, date, name, course, situation}
@@ -100,8 +126,8 @@ class Resume extends React.Component {
             <Table className={classes.table} padding='none'>
               <TableBody>
                   <TableRow key={1}>
-                    <TableCell className={classes.tableFont}  align="left">名前</TableCell>
-                    <TableCell className={classes.tableFont}  component="th" scope="row">石垣尚紀</TableCell>
+                    <TableCell className={classes.tableFont}  align="left">職務</TableCell>
+                    <TableCell className={classes.tableFont}  component="th" scope="row">職務</TableCell>
                   </TableRow>
                   <TableRow key={2}>
                     <TableCell className={classes.tableFont}  component="th" scope="row">年齢</TableCell>
@@ -114,7 +140,7 @@ class Resume extends React.Component {
             <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
               <Typography className={classes.heading}>学歴</Typography>
             </ExpansionPanelSummary>
-            <ExpansionPanelDetails className={classes.expansionPanelDetails}>
+            <ExpansionPanelDetails>
               <Table className={classes.table} padding='none'>
                 <TableHead>
                   <TableRow>
@@ -141,7 +167,7 @@ class Resume extends React.Component {
             <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
               <Typography className={classes.heading}>職歴</Typography>
             </ExpansionPanelSummary>
-            <ExpansionPanelDetails className={classes.expansionPanelDetails}>
+            <ExpansionPanelDetails>
               <Table className={classes.table} padding='none'>
                 <TableHead>
                   <TableRow>
@@ -168,7 +194,7 @@ class Resume extends React.Component {
             <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
               <Typography className={classes.heading}>主な取引先</Typography>
             </ExpansionPanelSummary>
-            <ExpansionPanelDetails className={classes.expansionPanelDetails}>
+            <ExpansionPanelDetails>
               <Typography variant="h6" align="left" color="textSecondary" component="p">
                 株式会社サイバーエージェント様、ギルドワークス株式会社様。
                 主に、アプリケーションエンジニアとして業務委託契約。
@@ -179,7 +205,7 @@ class Resume extends React.Component {
             <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
               <Typography className={classes.heading}>賞罰</Typography>
             </ExpansionPanelSummary>
-            <ExpansionPanelDetails className={classes.expansionPanelDetails}>
+            <ExpansionPanelDetails>
               <Table className={classes.table} padding='none'>
                 <TableHead>
                   <TableRow>
@@ -211,8 +237,8 @@ class Resume extends React.Component {
   }
 }
 
-Resume.propTypes = {
+JobCareer.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(Resume);
+export default withStyles(styles)(JobCareer);

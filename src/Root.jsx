@@ -16,6 +16,7 @@ class Root extends Component {
           {/*}<Route exact path="/resume" component={Resume} />*/}
           <Route exact path="/" render={props => <App route='home' {...props} />} />
           <Route exact path="/resume" render={props => <App route='resume' {...props} />} />
+          <Route exact path="/job_career" render={props => <App route='job_career' {...props} />} />
         </div>
       </BrowserRouter>
     )

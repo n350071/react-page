@@ -34,7 +34,7 @@ function Header(props) {
               ? 'ホーム'
               : route == 'resume'
                 ? '履歴'
-                : '' }
+                : '職務経歴' }
           </Typography>
           {/*<Button>Features</Button>*/}
           {/*<Button>Enterprise</Button>*/}
