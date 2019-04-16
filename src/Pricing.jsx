@@ -17,6 +17,7 @@ import rubyLogo from './ruby_logo.svg';
 import logo from './logo.svg';
 import './App.css';
 import Resume from './Resume.jsx'
+import { BrowserRouter, Route, Link } from 'react-router-dom';
 
 const styles = theme => ({
   '@global': {
@@ -220,12 +221,13 @@ function Pricing(props) {
               {footer.description.map(item => (
                 <Typography key={item.title} variant="subtitle1" color="textSecondary">
                 {footer.title == '経歴'
-                  ? <a className="App-link"
-                      href={item.link}
-                      target="_self"
-                      rel="noopener noreferrer">
-                      {item.title}
-                    </a>
+                  ? <Link to="/resume">履歴書</Link>
+                    // <a className="App-link"
+                    //     href={item.link}
+                    //     target="_self"
+                    //     rel="noopener noreferrer">
+                    //     {item.title}
+                    //   </a>
                    // <Resume
                       // title={item.title} />
                   :<a className="App-link"
