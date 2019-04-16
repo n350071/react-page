@@ -11,6 +11,8 @@ const Root = () => (
     <div>
       <Route exact path="/" component={App} />
       <Route exact path="/resume" component={Resume} />
+      <Route exact path="/react-page/" component={App} />
+      <Route exact path="/resume/react-page/" component={Resume} />
     </div>
   </BrowserRouter>
 );
