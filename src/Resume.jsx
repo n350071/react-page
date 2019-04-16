@@ -39,12 +39,15 @@ const styles = theme => ({
   },
   root: {
     width: '100%',
-    marginTop: theme.spacing.unit * 1,
-    overflowX: 'auto',
+    // marginTop: theme.spacing.unit * 3,
+    overflowX: 'hidden',
   },
   table: {
-    minWidth: 700,
+    minWidth: 300,
   },
+  tableFont: {
+    fontSize: '12px'
+  }
 });
 
 function Transition(props) {
@@ -113,9 +116,10 @@ class Resume extends React.Component {
         </a>
 
         <Dialog
-          fullScreen
+          scroll='paper'
           open={this.state.open}
           onClose={this.handleClose}
+          fullScreen
           TransitionComponent={Transition}
         >
           <AppBar className={classes.appBar} color='default'>
@@ -139,17 +143,17 @@ class Resume extends React.Component {
                 <Typography variant="h6">基本情報</Typography>
               </Grid>
               <Grid item xs={12}>
-                <Table className={classes.table}>
+                <Table className={classes.table} padding='none'>
                   <TableHead>
                     <TableRow>
-                      <TableCell>名前</TableCell>
-                      <TableCell align="left">年齢</TableCell>
+                      <TableCell className={classes.tableFont} >名前</TableCell>
+                      <TableCell className={classes.tableFont}  align="left">年齢</TableCell>
                     </TableRow>
                   </TableHead>
                   <TableBody>
                       <TableRow key={1}>
-                        <TableCell component="th" scope="row">石垣尚紀</TableCell>
-                        <TableCell align="left">33歳(5月生まれ)</TableCell>
+                        <TableCell className={classes.tableFont}  component="th" scope="row">石垣尚紀</TableCell>
+                        <TableCell className={classes.tableFont}  align="left">33歳(5月生まれ)</TableCell>
                       </TableRow>
                   </TableBody>
                 </Table>
@@ -158,22 +162,22 @@ class Resume extends React.Component {
                 <Typography variant="h6">学歴</Typography>
               </Grid>
               <Grid item xs={12}>
-                <Table className={classes.table}>
+                <Table className={classes.table} padding='none'>
                   <TableHead>
                     <TableRow>
-                      <TableCell>年月</TableCell>
-                      <TableCell align="left">大学</TableCell>
-                      <TableCell align="left">学部・専攻</TableCell>
-                      <TableCell align="left">状況</TableCell>
+                      <TableCell className={classes.tableFont}  >年月</TableCell>
+                      <TableCell className={classes.tableFont}   align="left">大学</TableCell>
+                      <TableCell className={classes.tableFont}   align="left">学部・専攻</TableCell>
+                      <TableCell className={classes.tableFont}   align="left">状況</TableCell>
                     </TableRow>
                   </TableHead>
                   <TableBody>
                     {univRows.map(row => (
                       <TableRow key={row.id}>
-                        <TableCell component="th" scope="row">{row.date}</TableCell>
-                        <TableCell align="left">{row.name}</TableCell>
-                        <TableCell align="left">{row.course}</TableCell>
-                        <TableCell align="left">{row.situation}</TableCell>
+                        <TableCell className={classes.tableFont}  component="th" scope="row">{row.date}</TableCell>
+                        <TableCell className={classes.tableFont}  align="left">{row.name}</TableCell>
+                        <TableCell className={classes.tableFont}  align="left">{row.course}</TableCell>
+                        <TableCell className={classes.tableFont}  align="left">{row.situation}</TableCell>
                       </TableRow>
                     ))}
                   </TableBody>
@@ -183,22 +187,22 @@ class Resume extends React.Component {
                 <Typography variant="h6">職歴</Typography>
               </Grid>
               <Grid item xs={12}>
-                <Table className={classes.table}>
+                <Table className={classes.table} padding='none'>
                   <TableHead>
                     <TableRow>
-                      <TableCell>年月</TableCell>
-                      <TableCell align="left">所属</TableCell>
-                      <TableCell align="left">組織</TableCell>
-                      <TableCell align="left">状況</TableCell>
+                      <TableCell className={classes.tableFont} >年月</TableCell>
+                      <TableCell className={classes.tableFont}  align="left">所属</TableCell>
+                      <TableCell className={classes.tableFont}  align="left">組織</TableCell>
+                      <TableCell className={classes.tableFont}  align="left">状況</TableCell>
                     </TableRow>
                   </TableHead>
                   <TableBody>
                     {workRows.map(row => (
                       <TableRow key={row.id}>
-                        <TableCell component="th" scope="row">{row.date}</TableCell>
-                        <TableCell align="left">{row.name}</TableCell>
-                        <TableCell align="left">{row.course}</TableCell>
-                        <TableCell align="left">{row.situation}</TableCell>
+                        <TableCell className={classes.tableFont}  component="th" scope="row">{row.date}</TableCell>
+                        <TableCell className={classes.tableFont}  align="left">{row.name}</TableCell>
+                        <TableCell className={classes.tableFont}  align="left">{row.course}</TableCell>
+                        <TableCell className={classes.tableFont}  align="left">{row.situation}</TableCell>
                       </TableRow>
                     ))}
                   </TableBody>
@@ -217,22 +221,22 @@ class Resume extends React.Component {
                 <Typography variant="h6">賞罰</Typography>
               </Grid>
               <Grid item xs={12}>
-                <Table className={classes.table}>
+                <Table className={classes.table} padding='none'>
                   <TableHead>
                     <TableRow>
-                      <TableCell>年月</TableCell>
-                      <TableCell align="left">組織</TableCell>
-                      <TableCell align="left">賞罰</TableCell>
-                      <TableCell align="left">ステータス</TableCell>
+                      <TableCell className={classes.tableFont} >年月</TableCell>
+                      <TableCell className={classes.tableFont}  align="left">組織</TableCell>
+                      <TableCell className={classes.tableFont}  align="left">賞罰</TableCell>
+                      <TableCell className={classes.tableFont}  align="left">ステータス</TableCell>
                     </TableRow>
                   </TableHead>
                   <TableBody>
                     {awardRows.map(row => (
                       <TableRow key={row.id}>
-                        <TableCell component="th" scope="row">{row.date}</TableCell>
-                        <TableCell align="left">{row.name}</TableCell>
-                        <TableCell align="left">{row.course}</TableCell>
-                        <TableCell align="left">{row.situation}</TableCell>
+                        <TableCell className={classes.tableFont}  component="th" scope="row">{row.date}</TableCell>
+                        <TableCell className={classes.tableFont}  align="left">{row.name}</TableCell>
+                        <TableCell className={classes.tableFont}  align="left">{row.course}</TableCell>
+                        <TableCell className={classes.tableFont}  align="left">{row.situation}</TableCell>
                       </TableRow>
                     ))}
                   </TableBody>
