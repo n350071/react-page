@@ -116,10 +116,13 @@ class Resume extends React.Component {
         </a>
 
         <Dialog
-          scroll='paper'
+          scroll='body'
           open={this.state.open}
           onClose={this.handleClose}
           fullScreen
+          // aria-labelledby="scroll-dialog-title"
+          // fullWidth={true}
+          // maxWidth='md'
           TransitionComponent={Transition}
         >
           <AppBar className={classes.appBar} color='default'>
