@@ -19,7 +19,7 @@ const footers = [
   {
     title: '経歴',
     description: [{
-      title: '履歴書',
+      title: '履歴',
       link: '/resume'
     }, {
       title: '職務経歴',
