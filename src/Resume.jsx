@@ -30,14 +30,22 @@ import TableRow from '@material-ui/core/TableRow';
 
 import Grid from '@material-ui/core/Grid';
 
-const styles = {
+const styles = theme => ({
   appBar: {
     position: 'relative',
   },
   flex: {
     flex: 1,
   },
-};
+  root: {
+    width: '100%',
+    marginTop: theme.spacing.unit * 1,
+    overflowX: 'auto',
+  },
+  table: {
+    minWidth: 700,
+  },
+});
 
 function Transition(props) {
   return <Slide direction="up" {...props} />;
