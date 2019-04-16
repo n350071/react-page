@@ -68,7 +68,7 @@ class Resume extends React.Component {
   };
 
   render() {
-    const { classes, title } = this.props;
+    const { classes } = this.props;
     let id = 0;
     function createData(name, calories, fat, carbs, protein) {
       id += 1;
@@ -110,159 +110,111 @@ class Resume extends React.Component {
     ];
 
     return (
-      <div>
-        <a className="App-link" onClick={this.handleClickOpen}>
-          {title}
-        </a>
-
-        <Dialog
-          scroll='body'
-          open={this.state.open}
-          onClose={this.handleClose}
-          fullScreen
-          // aria-labelledby="scroll-dialog-title"
-          // fullWidth={true}
-          // maxWidth='md'
-          TransitionComponent={Transition}
-        >
-          <AppBar className={classes.appBar} color='default'>
-            <Toolbar>
-              <IconButton color="inherit" onClick={this.handleClose} aria-label="Close">
-                <CloseIcon />
-              </IconButton>
-              <Typography variant="h6" color="inherit" className={classes.flex}>
-                閉じる
-              </Typography>
-            </Toolbar>
-          </AppBar>
-
-          <ExpansionPanel>
-            <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography variant="h5">履歴書</Typography>
-            </ExpansionPanelSummary>
-            <ExpansionPanelDetails>
-            <Grid container spacing={24}>
-              <Grid item xs={12}>
-                <Typography variant="h6">基本情報</Typography>
-              </Grid>
-              <Grid item xs={12}>
-                <Table className={classes.table} padding='none'>
-                  <TableHead>
-                    <TableRow>
-                      <TableCell className={classes.tableFont} >名前</TableCell>
-                      <TableCell className={classes.tableFont}  align="left">年齢</TableCell>
-                    </TableRow>
-                  </TableHead>
-                  <TableBody>
-                      <TableRow key={1}>
-                        <TableCell className={classes.tableFont}  component="th" scope="row">石垣尚紀</TableCell>
-                        <TableCell className={classes.tableFont}  align="left">33歳(5月生まれ)</TableCell>
-                      </TableRow>
-                  </TableBody>
-                </Table>
-              </Grid>
-              <Grid item xs={12}>
-                <Typography variant="h6">学歴</Typography>
-              </Grid>
-              <Grid item xs={12}>
-                <Table className={classes.table} padding='none'>
-                  <TableHead>
-                    <TableRow>
-                      <TableCell className={classes.tableFont}  >年月</TableCell>
-                      <TableCell className={classes.tableFont}   align="left">大学</TableCell>
-                      <TableCell className={classes.tableFont}   align="left">学部・専攻</TableCell>
-                      <TableCell className={classes.tableFont}   align="left">状況</TableCell>
-                    </TableRow>
-                  </TableHead>
-                  <TableBody>
-                    {univRows.map(row => (
-                      <TableRow key={row.id}>
-                        <TableCell className={classes.tableFont}  component="th" scope="row">{row.date}</TableCell>
-                        <TableCell className={classes.tableFont}  align="left">{row.name}</TableCell>
-                        <TableCell className={classes.tableFont}  align="left">{row.course}</TableCell>
-                        <TableCell className={classes.tableFont}  align="left">{row.situation}</TableCell>
-                      </TableRow>
-                    ))}
-                  </TableBody>
-                </Table>
-              </Grid>
-              <Grid item xs={12}>
-                <Typography variant="h6">職歴</Typography>
-              </Grid>
-              <Grid item xs={12}>
-                <Table className={classes.table} padding='none'>
-                  <TableHead>
-                    <TableRow>
-                      <TableCell className={classes.tableFont} >年月</TableCell>
-                      <TableCell className={classes.tableFont}  align="left">所属</TableCell>
-                      <TableCell className={classes.tableFont}  align="left">組織</TableCell>
-                      <TableCell className={classes.tableFont}  align="left">状況</TableCell>
-                    </TableRow>
-                  </TableHead>
-                  <TableBody>
-                    {workRows.map(row => (
-                      <TableRow key={row.id}>
-                        <TableCell className={classes.tableFont}  component="th" scope="row">{row.date}</TableCell>
-                        <TableCell className={classes.tableFont}  align="left">{row.name}</TableCell>
-                        <TableCell className={classes.tableFont}  align="left">{row.course}</TableCell>
-                        <TableCell className={classes.tableFont}  align="left">{row.situation}</TableCell>
-                      </TableRow>
-                    ))}
-                  </TableBody>
-                </Table>
-              </Grid>
-              <Grid item xs={12}>
-                <Typography variant="h6">主な取引先</Typography>
-              </Grid>
-              <Grid item xs={12}>
-                <Typography variant="h6" align="left" color="textSecondary" component="p">
-                  株式会社サイバーエージェント様、ギルドワークス株式会社様。
-                  主に、アプリケーションエンジニアとして業務委託契約。
-                </Typography>
-              </Grid>
-              <Grid item xs={12}>
-                <Typography variant="h6">賞罰</Typography>
-              </Grid>
-              <Grid item xs={12}>
-                <Table className={classes.table} padding='none'>
-                  <TableHead>
-                    <TableRow>
-                      <TableCell className={classes.tableFont} >年月</TableCell>
-                      <TableCell className={classes.tableFont}  align="left">組織</TableCell>
-                      <TableCell className={classes.tableFont}  align="left">賞罰</TableCell>
-                      <TableCell className={classes.tableFont}  align="left">ステータス</TableCell>
-                    </TableRow>
-                  </TableHead>
-                  <TableBody>
-                    {awardRows.map(row => (
-                      <TableRow key={row.id}>
-                        <TableCell className={classes.tableFont}  component="th" scope="row">{row.date}</TableCell>
-                        <TableCell className={classes.tableFont}  align="left">{row.name}</TableCell>
-                        <TableCell className={classes.tableFont}  align="left">{row.course}</TableCell>
-                        <TableCell className={classes.tableFont}  align="left">{row.situation}</TableCell>
-                      </TableRow>
-                    ))}
-                  </TableBody>
-                </Table>
-              </Grid>
-            </Grid>
-            </ExpansionPanelDetails>
-          </ExpansionPanel>
-
-          <ExpansionPanel>
-            <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography variant="h5">職務経歴書</Typography>
-            </ExpansionPanelSummary>
-            <ExpansionPanelDetails>
-              <Typography>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-                sit amet blandit leo lobortis eget.
-              </Typography>
-            </ExpansionPanelDetails>
-          </ExpansionPanel>
-
-        </Dialog>
-      </div>
+      <Grid container spacing={24}>
+        <Grid item xs={12}>
+          <Typography variant="h6">基本情報</Typography>
+        </Grid>
+        <Grid item xs={12}>
+          <Table className={classes.table} padding='none'>
+            <TableHead>
+              <TableRow>
+                <TableCell className={classes.tableFont} >名前</TableCell>
+                <TableCell className={classes.tableFont}  align="left">年齢</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+                <TableRow key={1}>
+                  <TableCell className={classes.tableFont}  component="th" scope="row">石垣尚紀</TableCell>
+                  <TableCell className={classes.tableFont}  align="left">33歳(5月生まれ)</TableCell>
+                </TableRow>
+            </TableBody>
+          </Table>
+        </Grid>
+        <Grid item xs={12}>
+          <Typography variant="h6">学歴</Typography>
+        </Grid>
+        <Grid item xs={12}>
+          <Table className={classes.table} padding='none'>
+            <TableHead>
+              <TableRow>
+                <TableCell className={classes.tableFont}  >年月</TableCell>
+                <TableCell className={classes.tableFont}   align="left">大学</TableCell>
+                <TableCell className={classes.tableFont}   align="left">学部・専攻</TableCell>
+                <TableCell className={classes.tableFont}   align="left">状況</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {univRows.map(row => (
+                <TableRow key={row.id}>
+                  <TableCell className={classes.tableFont}  component="th" scope="row">{row.date}</TableCell>
+                  <TableCell className={classes.tableFont}  align="left">{row.name}</TableCell>
+                  <TableCell className={classes.tableFont}  align="left">{row.course}</TableCell>
+                  <TableCell className={classes.tableFont}  align="left">{row.situation}</TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </Grid>
+        <Grid item xs={12}>
+          <Typography variant="h6">職歴</Typography>
+        </Grid>
+        <Grid item xs={12}>
+          <Table className={classes.table} padding='none'>
+            <TableHead>
+              <TableRow>
+                <TableCell className={classes.tableFont} >年月</TableCell>
+                <TableCell className={classes.tableFont}  align="left">所属</TableCell>
+                <TableCell className={classes.tableFont}  align="left">組織</TableCell>
+                <TableCell className={classes.tableFont}  align="left">状況</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {workRows.map(row => (
+                <TableRow key={row.id}>
+                  <TableCell className={classes.tableFont}  component="th" scope="row">{row.date}</TableCell>
+                  <TableCell className={classes.tableFont}  align="left">{row.name}</TableCell>
+                  <TableCell className={classes.tableFont}  align="left">{row.course}</TableCell>
+                  <TableCell className={classes.tableFont}  align="left">{row.situation}</TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </Grid>
+        <Grid item xs={12}>
+          <Typography variant="h6">主な取引先</Typography>
+        </Grid>
+        <Grid item xs={12}>
+          <Typography variant="h6" align="left" color="textSecondary" component="p">
+            株式会社サイバーエージェント様、ギルドワークス株式会社様。
+            主に、アプリケーションエンジニアとして業務委託契約。
+          </Typography>
+        </Grid>
+        <Grid item xs={12}>
+          <Typography variant="h6">賞罰</Typography>
+        </Grid>
+        <Grid item xs={12}>
+          <Table className={classes.table} padding='none'>
+            <TableHead>
+              <TableRow>
+                <TableCell className={classes.tableFont} >年月</TableCell>
+                <TableCell className={classes.tableFont}  align="left">組織</TableCell>
+                <TableCell className={classes.tableFont}  align="left">賞罰</TableCell>
+                <TableCell className={classes.tableFont}  align="left">ステータス</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {awardRows.map(row => (
+                <TableRow key={row.id}>
+                  <TableCell className={classes.tableFont}  component="th" scope="row">{row.date}</TableCell>
+                  <TableCell className={classes.tableFont}  align="left">{row.name}</TableCell>
+                  <TableCell className={classes.tableFont}  align="left">{row.course}</TableCell>
+                  <TableCell className={classes.tableFont}  align="left">{row.situation}</TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </Grid>
+      </Grid>
     );
   }
 }

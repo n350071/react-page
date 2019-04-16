@@ -107,7 +107,7 @@ const footers = [
     title: '経歴',
     description: [{
       title: '履歴書',
-      link: './'
+      link: './resume'
     }, {
       title: '職務経歴書',
       link: './'
@@ -220,8 +220,14 @@ function Pricing(props) {
               {footer.description.map(item => (
                 <Typography key={item.title} variant="subtitle1" color="textSecondary">
                 {footer.title == '経歴'
-                  ? <Resume
-                      title={item.title} />
+                  ? <a className="App-link"
+                      href={item.link}
+                      target="_self"
+                      rel="noopener noreferrer">
+                      {item.title}
+                    </a>
+                   // <Resume
+                      // title={item.title} />
                   :<a className="App-link"
                       href={item.link}
                       target="_blank"
