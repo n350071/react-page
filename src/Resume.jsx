@@ -120,18 +120,21 @@ class Resume extends React.Component {
 
     return (
       <React.Fragment>
-          <Table className={classes.table} padding='none'>
-            <TableBody>
-                <TableRow key={1}>
-                  <TableCell className={classes.tableFont}  align="left">名前</TableCell>
-                  <TableCell className={classes.tableFont}  component="th" scope="row">石垣尚紀</TableCell>
-                </TableRow>
-                <TableRow key={1}>
-                  <TableCell className={classes.tableFont}  component="th" scope="row">年齢</TableCell>
-                  <TableCell className={classes.tableFont}  align="left">33歳(5月生まれ)</TableCell>
-                </TableRow>
-            </TableBody>
-          </Table>
+        <Grid container>
+          <Grid item xs={12} sm={2}></Grid>
+          <Grid item xs={12} sm={8}>
+            <Table className={classes.table} padding='none'>
+              <TableBody>
+                  <TableRow key={1}>
+                    <TableCell className={classes.tableFont}  align="left">名前</TableCell>
+                    <TableCell className={classes.tableFont}  component="th" scope="row">石垣尚紀</TableCell>
+                  </TableRow>
+                  <TableRow key={2}>
+                    <TableCell className={classes.tableFont}  component="th" scope="row">年齢</TableCell>
+                    <TableCell className={classes.tableFont}  align="left">33歳</TableCell>
+                  </TableRow>
+              </TableBody>
+            </Table>
 
           <ExpansionPanel expanded={expanded === 'panel1'} onChange={this.handleChange('panel1')}>
             <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
@@ -225,6 +228,10 @@ class Resume extends React.Component {
               </Table>
             </ExpansionPanelDetails>
           </ExpansionPanel>
+        </Grid>
+        <Grid item xs={12} sm={2}></Grid>
+      </Grid>
+
         </React.Fragment>
     );
   }

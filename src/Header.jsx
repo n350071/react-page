@@ -20,7 +20,6 @@ const styles = theme => ({
 
 function Header(props) {
   const { classes, route } = props;
-if(route){console.log(route)}
   return (
     <React.Fragment>
       <CssBaseline />
@@ -32,7 +31,7 @@ if(route){console.log(route)}
           </Link>
           <Typography variant="h6" color="inherit" className={classes.toolbarTitle}>
             { route == 'home'
-              ? 'いしがき'
+              ? 'ホーム'
               : route == 'resume'
                 ? '履歴'
                 : '' }
