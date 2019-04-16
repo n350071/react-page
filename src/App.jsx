@@ -7,14 +7,13 @@ import Footer from './Footer.jsx'
 class App extends Component {
   render() {
     const { route } = this.props;
-    if(route){console.log(route)}
     return (
 
       <div className="App">
-        <Header />
-        { route == 'home' ? <Home /> : ''}
-        { route == 'resume' ? <Resume /> : ''}
-        <Footer />
+        <Header {...this.props} />
+        { route == 'home' ? <Home  {...this.props} /> : ''}
+        { route == 'resume' ? <Resume  {...this.props} /> : ''}
+        <Footer  {...this.props} />
       </div>
     );
   }

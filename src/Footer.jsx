@@ -65,7 +65,7 @@ function Home(props) {
               {footer.description.map(item => (
                 <Typography key={item.title} variant="subtitle1" color="textSecondary">
                 {footer.title == '経歴'
-                  ? <Link to="/resume">履歴書</Link>
+                  ? <Link to="/resume">履歴</Link>
                     // <a className="App-link"
                     //     href={item.link}
                     //     target="_self"

@@ -19,8 +19,8 @@ const styles = theme => ({
 });
 
 function Header(props) {
-  const { classes } = props;
-
+  const { classes, route } = props;
+if(route){console.log(route)}
   return (
     <React.Fragment>
       <CssBaseline />
@@ -31,7 +31,11 @@ function Header(props) {
             {/*<img src={rubyLogo} className="Ruby-logo" alt="logo" />*/}
           </Link>
           <Typography variant="h6" color="inherit" className={classes.toolbarTitle}>
-            いしがき
+            { route == 'home'
+              ? 'いしがき'
+              : route == 'resume'
+                ? '履歴'
+                : '' }
           </Typography>
           {/*<Button>Features</Button>*/}
           {/*<Button>Enterprise</Button>*/}
