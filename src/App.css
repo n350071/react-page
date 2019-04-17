@@ -11,13 +11,13 @@
 
 .React-logo {
   animation: React-logo-spin infinite 20s linear;
-  height: 17px;
+  height: 20px;
   pointer-events: none;
 }
 
 .Ruby-logo {
   /* animation: React-logo-spin infinite 20s linear; */
-  height: 5vmin;
+  height: 20px;
   pointer-events: none;
   margin-right: 2vmin;
 }

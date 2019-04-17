@@ -11,7 +11,7 @@ import './App.css';
 import Tooltip from '@material-ui/core/Tooltip';
 import Button from '@material-ui/core/Button';
 import logo from './logo.svg';
-
+import RubyLogo from './ruby_logo.svg';
 
 const styles = theme => ({
   '@global': {
@@ -141,13 +141,12 @@ function Home(props) {
                   {/*</div>*/}
                   {tier.description.map(line => (
                     <React.Fragment key={line}>
-                    {line !== 'React+Redux'
-                      ? <Typography variant="subtitle1" align="center" key={line}>{line}</Typography>
-                      : <React.Fragment>
+                    {line === 'React+Redux'
+                      ? <React.Fragment>
                           <img src={logo} className="React-logo" alt="logo" />
                           <Tooltip
                             enterTouchDelay = {0}
-                            leaveTouchDelay = {3000}
+                            leaveTouchDelay = {2000}
                             disableHoverListener
                             title="クリックありがとうございます🎉このサイトはReactで作りました！"
                             classes={{ tooltip: classes.customWidth }}>
@@ -156,6 +155,21 @@ function Home(props) {
                             </Button>
                           </Tooltip>
                         </React.Fragment>
+                      : line === 'Ruby on Rails'
+                        ? <React.Fragment>
+                            <img src={RubyLogo} className="Ruby-logo" alt="logo" />
+                            <Tooltip
+                              enterTouchDelay = {0}
+                              leaveTouchDelay = {2000}
+                              disableHoverListener
+                              title="いちばん得意な言語です👍"
+                              classes={{ tooltip: classes.customWidth }}>
+                              <Button id='react-tooltip-no-upcase'>
+                                <Typography variant="subtitle1" align="center" key={line}>{line}</Typography>
+                              </Button>
+                            </Tooltip>
+                          </React.Fragment>
+                        : <Typography variant="subtitle1" align="center" key={line}>{line}</Typography>
                     }
                     </React.Fragment>
                   ))}
