@@ -8,6 +8,10 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 import './App.css';
+import Tooltip from '@material-ui/core/Tooltip';
+import Button from '@material-ui/core/Button';
+import logo from './logo.svg';
+
 
 const styles = theme => ({
   '@global': {
@@ -43,6 +47,9 @@ const styles = theme => ({
     [theme.breakpoints.up('sm')]: {
       paddingBottom: theme.spacing.unit * 2,
     },
+  },
+  customWidth: {
+    maxWidth: 176,
   },
 });
 
@@ -133,10 +140,25 @@ function Home(props) {
                   {/*  </Typography>*/}
                   {/*</div>*/}
                   {tier.description.map(line => (
-                    <Typography variant="subtitle1" align="center" key={line}>
-                      {line}
-                    </Typography>
+                    <React.Fragment key={line}>
+                    {line !== 'React+Redux'
+                      ? <Typography variant="subtitle1" align="center" key={line}>{line}</Typography>
+                      : <React.Fragment>
+                          <img src={logo} className="React-logo" alt="logo" />
+                          <Tooltip
+                            disableHoverListener
+                            title="クリックありがとうございます🎉このサイトはReactで作りました！"
+                            classes={{ tooltip: classes.customWidth }}>
+                            <Button id='react-tooltip-no-upcase'>
+                              <Typography variant="subtitle1" align="center" key={line}>{line}</Typography>
+                            </Button>
+                          </Tooltip>
+                        </React.Fragment>
+                    }
+                    </React.Fragment>
                   ))}
+
+
                 </CardContent>
                 {/*<CardActions className={classes.cardActions}>*/}
                 {/*  <Button fullWidth variant={tier.buttonVariant} color="primary">*/}

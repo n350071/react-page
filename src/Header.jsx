@@ -9,6 +9,7 @@ import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 // import rubyLogo from './ruby_logo.svg';
 import logo from './logo.svg';
+import shirofune9876 from './shirofune9876.png'
 import './App.css';
 import { Link } from 'react-router-dom';
 
@@ -26,7 +27,7 @@ function Header(props) {
       <AppBar position="static" color="default" className={classes.appBar}>
         <Toolbar>
           <Link to="/">
-            <img src={logo} className="App-logo" alt="logo" />
+            <img src={shirofune9876} className="Shirofune-logo" alt="logo" />
             {/*<img src={rubyLogo} className="Ruby-logo" alt="logo" />*/}
           </Link>
           <Typography variant="h6" color="inherit" className={classes.toolbarTitle}>

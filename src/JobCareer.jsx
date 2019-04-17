@@ -11,7 +11,6 @@ import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
 
 import Grid from '@material-ui/core/Grid';
 
@@ -66,16 +65,6 @@ class JobCareer extends React.Component {
       createOssRow('rails/rails',　'#32572', 'https://github.com/rails/rails/pull/32572', 'Railsのバージョン5.0に伴う変更がドキュメントに反映されていなかったため、ドキュメントを修正し、プルリクエストを送信しました。'),
       createOssRow('GoogleCloudPlatform/kubernetes-engine-samples',　'#90', 'https://github.com/GoogleCloudPlatform/kubernetes-engine-samples/issues/90', 'PVCの設定ミスによるMulti-Attach errorに関して、チュートリアルで起きた問題を修正するIssueを立て、PRの準備も完了しています。(Solutionのところに記載)'),
     ];
-    function createPJRow(name, desc){
-      id +=1;
-      return { id, name, desc}
-    }
-    const guildHubRows = [
-      createPJRow('フロント',　'React+Redux, Material-UI, Bootstrap4'),
-    ];
-
-
-
 
     return (
       <React.Fragment>
