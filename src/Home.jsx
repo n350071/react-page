@@ -49,7 +49,7 @@ const styles = theme => ({
 const tiers = [
   {
     title: 'フロント',
-    description: ['ReactJS', 'JQuery', 'JQueryMobile', 'Android(Java)', 'Cordova', 'iOS(Objective-C)'],
+    description: ['React+Redux', 'JQuery', 'JQueryMobile', 'Android(Java)', 'Cordova', 'iOS(Objective-C)'],
   },
   {
     title: 'バック',
