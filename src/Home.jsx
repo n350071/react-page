@@ -146,6 +146,8 @@ function Home(props) {
                       : <React.Fragment>
                           <img src={logo} className="React-logo" alt="logo" />
                           <Tooltip
+                            enterTouchDelay = {0}
+                            leaveTouchDelay = {3000}
                             disableHoverListener
                             title="クリックありがとうございます🎉このサイトはReactで作りました！"
                             classes={{ tooltip: classes.customWidth }}>
