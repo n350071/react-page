@@ -104,7 +104,7 @@ class Resume extends React.Component {
                   </TableRow>
                   <TableRow key={2}>
                     <TableCell className={classes.tableFont}  component="th" scope="row">年齢</TableCell>
-                    <TableCell className={classes.tableFont}  align="left">33歳</TableCell>
+                    <TableCell className={classes.tableFont}  align="left">34歳</TableCell>
                   </TableRow>
               </TableBody>
             </Table>
